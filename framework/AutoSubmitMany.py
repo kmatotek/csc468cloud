@@ -8,7 +8,7 @@ import subprocess
 # Using several models, to submit several times
 
 
-models = ["llama3", "qwen2.5-coder"]
+models = ["llama3"]
 
 # Prompting Ollama model
 def api_call(input_text, model):
@@ -47,7 +47,7 @@ for model in models:
 
         if not os.path.isdir(folder_path): continue # Only work on directories
 
-        if not folder_name == "twostones": continue # Only work on specific problem
+        #if not folder_name == "twostones": continue # Only work on specific problem
 
         for i in range(1,4):
         
