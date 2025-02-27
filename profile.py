@@ -5,6 +5,8 @@ import geni.rspec.pg as rspec
 request = portal.context.makeRequestRSpec()
 # Create a XenVM
 node = request.XenVM("node")
+node.cores = 4
+node.ram = 4096
 node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU22-64-STD"
 node.routable_control_ip = "true"
 
