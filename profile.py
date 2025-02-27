@@ -1,18 +1,17 @@
 import geni.portal as portal
 import geni.rspec.pg as rspec
+import geni.rspec.emulab
 
 # Create a Request object to start building the RSpec.
 request = portal.context.makeRequestRSpec()
-# Create a XenVM
-node = request.XenVM("node")
-node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU22-64-STD"
-node.routable_control_ip = "true"
+
+# Allocate a node and request a blockstore (disk) of 400GB mounted at /mydata.
+node = request.RawPC("node")
 node.cores = 4
 node.ram = 4096
+node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU16-64-STD"  # Use a suitable image
+bs = node.Blockstore("bs", "/mydata")
+bs.size = "500GB"  # Size of the blockstore
 
-node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt update"))
-node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt install -y apache2"))
-node.addService(rspec.Execute(shell="/bin/sh", command='sudo systemctl status apache2'))
-
-# Print the RSpec to the enclosing page..
+# Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()
