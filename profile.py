@@ -17,7 +17,7 @@ node.addService(rspec.Execute(shell="bash", command="echo Using GPU"))
 # Allocate NVMe storage. One 1.9TB SSD and one 960GB SSD.
 # Convert the total size from TB to GB (2TB = 2000GB)
 bs = node.Blockstore("bs", "/mydata")
-bs.size = 2000  # Size in GB, 2TB = 2000GB
+bs.size = "2000GB"  # Size in GB, 2TB = 2000GB
 
 # Set networking options if relevant (e.g., Mellanox ConnectX-7 100Gbps NIC)
 node.addInterface("eth0")
