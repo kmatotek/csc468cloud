@@ -13,6 +13,9 @@ node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD
 
 # Specify the GPU (NVIDIA H100) if needed for your tasks. This will depend on your usage.
 node.addService(rspec.Execute(shell="bash", command="echo Using GPU"))
+node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt update"))
+node.addService(rspec.Execute(shell="/bin/sh", command="sudo apt install -y git python3 apache2"))
+node.addService(rspec.Execute(shell="/bin/sh", command='sudo systemctl status apache2'))
 
 # Allocate NVMe storage. One 1.9TB SSD and one 960GB SSD.
 # Convert the total size from TB to GB (2TB = 2000GB)
