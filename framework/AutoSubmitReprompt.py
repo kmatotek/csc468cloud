@@ -4,7 +4,7 @@ import subprocess
 import re
 
 # List of models to test
-models = ["qwen2.5-coder"]
+models = ["deepseek-r1:671b"]
 
 # Get the last non-empty line from text
 def get_last_non_empty_line(text):
@@ -67,8 +67,8 @@ for model in models:
             continue
 
         # Optional: Process only "1dfroggereasy" for testing
-        if not folder_name == "1dfroggereasy":
-            continue
+        #if not folder_name == "1dfroggereasy":
+           #continue
 
         problem_id = folder_name
 
