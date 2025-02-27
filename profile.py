@@ -11,7 +11,7 @@ node.cores = 4
 node.ram = 4096
 node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU16-64-STD"  # Use a suitable image
 bs = node.Blockstore("bs", "/mydata")
-bs.size = "500GB"  # Size of the blockstore
+bs.size = "600GB"  # Size of the blockstore
 
 # Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()
