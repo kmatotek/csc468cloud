@@ -1,0 +1,24 @@
+Here is the Python program for this problem:
+
+```
+def find_closest_ending_in_99():
+    N = int(input())
+    closest_number = None
+    diff1 = float('inf')
+    diff2 = float('inf')
+
+    for i in range(N-99, N+100):
+        if i % 100 == 99:
+            diff = abs(i - N)
+            if diff < diff1:
+                closest_number = i
+                diff1 = diff
+            elif diff == diff1:
+                closest_number = max(closest_number, i)
+
+    print(closest_number)
+
+find_closest_ending_in_99()
+```
+
+This program reads an integer `N` from the standard input, and then iterates over all integers in the range `[N-99, N+100]`. It checks each number to see if it ends in 99. If it does, it calculates the absolute difference between that number and `N`, and updates the closest number and its corresponding difference if necessary. Finally, it prints out the closest number that ends in 99.

@@ -1,0 +1,20 @@
+Here is the Python program to solve this problem:
+
+```Python
+def winner(n):
+    if n % 2 == 0:
+        return "Bob"
+    else:
+        return "Alice"
+
+n = int(input())
+print(winner(n))
+```
+
+This program defines a function `winner(n)` that takes an integer `n` as input and returns the winner based on whether the number of stones is odd or even. The main part of the program reads the input `n` from the user, calls the `winner(n)` function with this value, and prints the result.
+
+The test cases provided in the problem can be used to verify that this program works correctly:
+
+- For Sample Input 1 (with 1 stone), the program should print "Alice".
+- For Sample Input 2 (with 2 stones), the program should print "Bob".
+- For Sample Input 3 (with 5 stones), the program should print "Alice".

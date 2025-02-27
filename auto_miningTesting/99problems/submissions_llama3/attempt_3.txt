@@ -1,0 +1,21 @@
+I apologize for my mistake. It seems that my previous solutions did not work correctly.
+
+Here is a new Python program that should pass all test cases:
+
+```
+def find_closest_ending_in_99():
+    N = int(input())
+    closest_number1 = (N // 100) * 100 + 99
+    closest_number2 = ((N // 100) + 1) * 100 + 99
+
+    if abs(closest_number1 - N) < abs(closest_number2 - N):
+        print(closest_number1)
+    else:
+        print(closest_number2)
+
+find_closest_ending_in_99()
+```
+
+This program calculates the closest number that ends in 99 by considering two cases: either `N` is already close to a number ending in 99, or it is far from such a number. It then prints out the closer of these two numbers.
+
+I hope this solution works correctly and passes all test cases.

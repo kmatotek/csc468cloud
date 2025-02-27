@@ -1,0 +1,30 @@
+Sample Input 1
+Sample Output 1
+
+
+
+6 4 42
+-9 1 42 -2 -3 -3
+
+
+
+magic
+2
+
+
+
+
+
+
+Sample Input 2
+Sample Output 2
+
+
+
+8 2 13
+7 5 4 2 13 -2 -3 6
+
+
+
+cycle
+4

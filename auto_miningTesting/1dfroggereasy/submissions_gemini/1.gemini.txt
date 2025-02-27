@@ -1,0 +1,50 @@
+```python
+def game_outcome(board_size, starting_position, goal_number, board_values):
+    frog_position = starting_position - 1  # Adjust for zero-based indexing
+    visited_positions = set()
+    hop_count = 0
+
+    while True:
+        if board_values[frog_position] == goal_number:
+            return "magic", hop_count
+        elif frog_position < 0:
+            return "left", hop_count
+        elif frog_position >= board_size:
+            return "right", hop_count
+        elif frog_position in visited_positions:
+            return "cycle", hop_count
+
+        visited_positions.add(frog_position)
+        hop_distance = board_values[frog_position]
+        frog_position += hop_distance
+        hop_count += 1
+
+if __name__ == "__main__":
+    board_size, starting_position, goal_number = map(int, input().split())
+    board_values = list(map(int, input().split()))
+    fate, hops = game_outcome(board_size, starting_position, goal_number, board_values)
+    print(fate)
+    print(hops)
+```
+### Explanation:
+
+1. **Function Definition:**
+   - The `game_outcome` function takes four arguments: `board_size` (number of squares), `starting_position` (initial frog position), `goal_number` (the magic number), and `board_values` (a list of integers representing the board).
+
+2. **Initialization:**
+   - `frog_position` is set to `starting_position - 1` to account for zero-based indexing in Python lists.
+   - `visited_positions` is a set to keep track of squares the frog has visited.
+   - `hop_count` is initialized to 0.
+
+3. **Game Loop:**
+   - The `while True` loop continues until the game ends (one of the four fates is encountered).
+   - **Check for Magic Number:** If the frog lands on the magic number, the function returns "magic" and the number of hops.
+   - **Check for Falling Off:** If the frog's position goes out of bounds (less than 0 or greater than or equal to `board_size`), it falls off the board, and the function returns "left" or "right" accordingly, along with the hop count. 
+   - **Check for Cycle:** If the frog lands on a square it has visited before, it's trapped in a cycle, and the function returns "cycle" and the hop count. 
+   - **Update Position and Hop Count:** If none of the above conditions are met, the frog's position is updated based on the value on the current square, and the `hop_count` is incremented.
+
+4. **Main Block:**
+   - The `if __name__ == "__main__":` block ensures that the code inside it only runs when the script is executed directly, not when imported as a module.
+   - It takes input for `board_size`, `starting_position`, `goal_number`, and `board_values` from the user.
+   - It calls the `game_outcome` function to get the frog's fate and the number of hops. 
+   - Finally, it prints the fate and the number of hops. 
