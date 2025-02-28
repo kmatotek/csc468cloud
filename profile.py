@@ -9,8 +9,8 @@ request = portal.context.makeRequestRSpec()
 # Allocate a node with the correct hardware configuration.
 node = request.RawPC("node")
 node.hardware_type = "d8545"
-node.cores = 8  # 8-core CPU (Arm Neoverse V2)
-node.ram = 100000  # 100GB RAM (in MB)
+node.cores = 4  # 8-core CPU (Arm Neoverse V2)
+node.ram = 32000  # 100GB RAM (in MB)
 
 node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD"
 
