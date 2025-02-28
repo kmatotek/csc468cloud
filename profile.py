@@ -11,7 +11,7 @@ node = request.RawPC("node")
 node.hardware_type = "nvidiagh"
 node.cores = 72  # 72-core CPU (Arm Neoverse V2)
 node.ram = 480000  # 480GB RAM (in MB)
-node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD"  # Make sure this image is available for nvidiagh
+node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-ARM64-STD"
 
 # Specify the GPU (NVIDIA H100) if needed for your tasks. This will depend on your usage.
 node.addService(rspec.Execute(shell="bash", command="echo Using GPU"))
