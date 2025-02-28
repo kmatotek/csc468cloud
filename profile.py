@@ -4,10 +4,11 @@ import geni.rspec.emulab
 
 # Create a Request object to start building the RSpec.
 request = portal.context.makeRequestRSpec()
-node.hardware_type = "nvidiagh"
+
 
 # Allocate a node with the correct hardware configuration.
 node = request.RawPC("node")
+node.hardware_type = "nvidiagh"
 node.cores = 72  # 72-core CPU (Arm Neoverse V2)
 node.ram = 480000  # 480GB RAM (in MB)
 node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD"  # Make sure this image is available for nvidiagh
