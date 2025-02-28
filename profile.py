@@ -8,7 +8,7 @@ request = portal.context.makeRequestRSpec()
 
 # Allocate a node with the correct hardware configuration.
 node = request.RawPC("node")
-node.hardware_type = "d7525"
+node.hardware_type = "c4130"
 node.cores = 4  # 8-core CPU (Arm Neoverse V2)
 node.ram = 32000  # 100GB RAM (in MB)
 
