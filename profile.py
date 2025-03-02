@@ -8,7 +8,8 @@ request = portal.context.makeRequestRSpec()
 
 # Allocate a node with the correct hardware configuration.
 node = request.RawPC("node")
-node.hardware_type = "r7525"
+node.hardware_type = "r650"
+# Use r650, r625, m400
 #node.cores = 4  # 8-core CPU (Arm Neoverse V2)
 #node.ram = 32000  # 100GB RAM (in MB)
 
@@ -23,7 +24,7 @@ node.addService(rspec.Execute(shell="/bin/sh", command='sudo systemctl status ap
 # Allocate NVMe storage. One 1.9TB SSD and one 960GB SSD.
 
 bs = node.Blockstore("bs", "/mydata")
-bs.size = "1000GB"  # 1 tb
+bs.size = "500GB"  # 1 tb
 
 # Set networking options if relevant (e.g., Mellanox ConnectX-7 100Gbps NIC)
 node.addInterface("eth0")
