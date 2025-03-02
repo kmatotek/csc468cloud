@@ -23,7 +23,7 @@ node.addService(rspec.Execute(shell="/bin/sh", command='sudo systemctl status ap
 
 # Allocate NVMe storage. One 1.9TB SSD and one 960GB SSD.
 
-bs = node.Blockstore("bs", "/mydata")
+bs = node.Blockstore("bs", "/OllamaModels")
 bs.size = "500GB"  # 1 tb
 
 # Set networking options if relevant (e.g., Mellanox ConnectX-7 100Gbps NIC)
